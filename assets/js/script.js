@@ -40,3 +40,27 @@ let questions = [
         answer: "Florentino Perez"
     }
 ];
+
+let currentQuestionNumber = 0;
+let score = 0;
+
+function displayQuestion() {
+    let currentQuestion = questions[currentQuestionNumber];
+    document.getElementById('question').textContent = currentQuestion.question;
+    let answersBox = document.getElementById('answers');
+    answersBox.innerHTML = "";
+    currentQuestion.options.forEach(option => {
+        let button = document.createElement('button');
+        button.textContent = option;
+        button.addEventListener('click', function() {
+            checkAnswer(option);         
+        });
+        answersBox.appendChild(button);
+    });
+}
+
+function checkAnswer() {
+
+}
+
+displayQuestion();

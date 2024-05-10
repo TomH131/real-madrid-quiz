@@ -20,11 +20,32 @@ img {
     margin: 10px auto;
 }
 
-#question,
-#answers,
-#restart-button {
+
+#question {
     border-style: solid;
-    border-color: black;
+    border-color: rgb(175, 175, 175);
     background-color: #dddddd;
     border-width: thin;
+    margin: 15px auto;
+    width: 75%;
+    padding: 5px;
+}
+
+button {
+    border-style: solid;
+    border-color: rgb(175, 175, 175);
+    background-color: #dddddd;
+    border-width: thin;
+    margin: 10px auto;
+    width: 60%;
+    padding: 5px;
+}
+
+#restart-button {
+    border-style: solid;
+    border-color: rgb(175, 175, 175);
+    background-color: #dddddd;
+    border-width: thin;
+    margin: 10px auto;
+    width: 40%;
 }
