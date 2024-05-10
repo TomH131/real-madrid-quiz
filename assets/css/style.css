@@ -1,0 +1,30 @@
+* {
+    text-align: center;
+    align-items: center;
+    background-color: white;
+    color: rgb(0 96 146);
+}
+
+h1 {
+    font-size: 200%;
+    margin: 10px;
+}
+
+img {
+    width: 80px;
+    height: 100px;
+}
+
+.quiz {
+    width: 75%;
+    margin: 10px auto;
+}
+
+#question,
+#answers,
+#restart-button {
+    border-style: solid;
+    border-color: black;
+    background-color: #dddddd;
+    border-width: thin;
+}
