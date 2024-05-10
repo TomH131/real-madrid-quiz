@@ -1,3 +1,4 @@
+/*Global style */
 * {
     text-align: center;
     align-items: center;
@@ -5,6 +6,7 @@
     color: rgb(0 96 146);
 }
 
+/*Header*/
 h1 {
     font-size: 200%;
     margin: 10px;
@@ -15,16 +17,16 @@ img {
     height: 100px;
 }
 
+/*Main content*/
 .quiz {
     width: 75%;
     margin: 10px auto;
 }
 
-
 #question {
     border-style: solid;
     border-color: rgb(175, 175, 175);
-    background-color: #dddddd;
+    background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 15px auto;
     width: 75%;
@@ -34,7 +36,7 @@ img {
 button {
     border-style: solid;
     border-color: rgb(175, 175, 175);
-    background-color: #dddddd;
+    background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 10px auto;
     width: 60%;
@@ -44,7 +46,7 @@ button {
 #restart-button {
     border-style: solid;
     border-color: rgb(175, 175, 175);
-    background-color: #dddddd;
+    background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 10px auto;
     width: 40%;
