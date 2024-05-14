@@ -12,7 +12,8 @@ let questions = [
     {
         question: "1. Who is the all-time top scorer for Real Madrid?",
         answers: shuffleAnswers(["Cristiano Ronaldo", "Raul", "Alfredo Di Stefano", "Karim Benzema"]),
-        correctAnswer: "Cristiano Ronaldo"
+        correctAnswer: "Cristiano Ronaldo",
+        image: "assets/images/cristiano-ronaldo.jpg"
     },
     {
         question: "2. How many UEFA Champions League titles has Real Madrid won?",
@@ -81,16 +82,24 @@ function checkAnswer(selectedOption) {
         score++;
         document.getElementById('score').textContent = "Score: " + score + "/8";
         Swal.fire({
+            imageUrl: currentQuestion.image,
             title: "Correct!",
+            imageWidth: 425,
+            imageHeight: 250,
+            imageAlt: "Cristiano Ronaldo",
+            text: `You got the correct answer`,
             showConfirmButton: false,
-            timer: 750})
+            timer: 1500
+        })
     } else if (currentQuestionNumber === questions.length) {
         endQuiz();
     } else {
         Swal.fire({
             title: "That's wrong unfortunately",
+            text: `The answer is ${currentQuestion.correctAnswer}`,
             showConfirmButton: false,
-            timer: 750})
+            timer: 1500
+        })
     }
 
     //Moving the screen onto the next question or ending the quiz if it's the last question
