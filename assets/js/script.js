@@ -80,6 +80,17 @@ function checkAnswer(selectedOption) {
     if (selectedOption === currentQuestion.correctAnswer) {
         score++;
         document.getElementById('score').textContent = "Score: " + score + "/8";
+        Swal.fire({
+            title: "Correct!",
+            showConfirmButton: false,
+            timer: 750})
+    } else if (currentQuestionNumber === questions.length) {
+        endQuiz();
+    } else {
+        Swal.fire({
+            title: "That's wrong unfortunately",
+            showConfirmButton: false,
+            timer: 750})
     }
 
     //Moving the screen onto the next question or ending the quiz if it's the last question
