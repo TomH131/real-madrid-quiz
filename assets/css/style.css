@@ -19,7 +19,7 @@ img {
 
 /*Main content*/
 .quiz {
-    width: 75%;
+    width: 80%;
     margin: 10px auto;
 }
 
@@ -29,7 +29,7 @@ img {
     background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 15px auto;
-    width: 75%;
+    width: 80%;
     padding: 5px;
 }
 
@@ -50,4 +50,20 @@ button {
     border-width: thin;
     margin: 10px auto;
     width: 40%;
+}
+
+/* Media query for tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    h1 {
+        font-size: 300%;
+    }
+
+    img{
+        width: 120px;
+        height: 160px;
+    }
+
+    .quiz {
+        width: 60%;        
+    }
 }
