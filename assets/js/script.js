@@ -53,6 +53,7 @@ function displayQuestion() {
 
     //Adding in the answers and running the checkAnswer function when they are clicked
     let answersBox = document.getElementById('answers');
+    answersBox.innerHTML = "";
     currentQuestion.answers.forEach(function (option) {
         let button = document.createElement('button');
         button.textContent = option;
@@ -74,7 +75,7 @@ function checkAnswer() {
 
     //Moving the screen onto the next question or ending the quiz if it's the last question
     currentQuestionNumber++;
-    is (currentQuestionNumber < questions.length) {
+    if (currentQuestionNumber < questions.length) {
         displayQuestion();
     } else {
         endQuiz();
@@ -82,7 +83,20 @@ function checkAnswer() {
 }
 
 function endQuiz() {
-    
+    alert("The quiz has finished! Your final score: " + score);
+}
+
+function restartQuiz() {
+
+    //Adding a restart quiz function so the user can try again after completing their first attempt
+    currentQuestionNumber = 0;
+    score = 0;
+    document.getElementById("score").textContent = "Score: 0/8";
+    displayQuestion();
+}
+
+document.getElementById('restart-button').addEventListener('click', function() {
+    restartQuiz();
 }
 
 //Running the function to begin the quiz
