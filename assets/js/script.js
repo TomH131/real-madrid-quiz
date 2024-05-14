@@ -1,43 +1,52 @@
+// Shuffle function
+function shuffleAnswers(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 //List of questions, their answers and the correct one
 let questions = [
     {
         question: "Who is the all-time top scorer for Real Madrid?",
-        answers: ["Cristiano Ronaldo", "Raul", "Alfredo Di Stefano", "Karim Benzema"],
+        answers: shuffleAnswers(["Cristiano Ronaldo", "Raul", "Alfredo Di Stefano", "Karim Benzema"]),
         correctAnswer: "Cristiano Ronaldo"
     },
     {
         question: "How many UEFA Champions League titles has Real Madrid won?",
-        answers: ["10", "12", "14", "16"],
+        answers: shuffleAnswers(["10", "12", "14", "16"]),
         correctAnswer: "14"
     },
     {
         question: "Who is the current manager of Real Madrid?",
-        answers: ["Zinedine Zidane", "Jose Mourinho", "Carlo Ancelotti", "Rafa Benitez"],
+        answers: shuffleAnswers(["Zinedine Zidane", "Jose Mourinho", "Carlo Ancelotti", "Rafa Benitez"]),
         correctAnswer: "Carlo Ancelotti"
     },
     {
         question: "Who is the current captain of Real Madrid?",
-        answers: ["Nacho", "Sergio Ramos", "Jude Bellingham", "Luka Modric"],
+        answers: shuffleAnswers(["Nacho", "Sergio Ramos", "Jude Bellingham", "Luka Modric"]),
         correctAnswer: "Nacho"
     },
     {
         question: "What time did Sergio Ramos score the famous equalising goal in the 2014 Champions League final?",
-        answers: ["89:00", "91:54", "92:48", "90:02"],
+        answers: shuffleAnswers(["89:00", "91:54", "92:48", "90:02"]),
         correctAnswer: "92:48"
     },
     {
         question: "Who is Real Madrid's most expensive transfer?",
-        answers: ["Gareth Bale", "Jude Bellingham", "Eden Hazard", "Toni Kroos"],
+        answers: shuffleAnswers(["Gareth Bale", "Jude Bellingham", "Eden Hazard", "Toni Kroos"]),
         correctAnswer: "Eden Hazard"
     },
     {
         question: "What year was Real Madrid founded?",
-        answers: ["1910", "1898", "1955", "1902"],
+        answers: shuffleAnswers(["1910", "1898", "1955", "1902"]),
         correctAnswer: "1902"
     },
     {
         question: "Who is the current Real Madrid President?",
-        answers: ["Ramon Calderon", "Florentino Perez", "David Beckham", "Joan Laporta"],
+        answers: shuffleAnswers(["Ramon Calderon", "Florentino Perez", "David Beckham", "Joan Laporta"]),
         correctAnswer: "Florentino Perez"
     }
 ];
@@ -83,8 +92,23 @@ function checkAnswer(selectedOption) {
 }
 
 function endQuiz() {
-    alert("The quiz has finished! Your final score: " + score);
-}
+    if (score === 8) {
+        Swal.fire({
+            title: "Amazing!",
+            text: `You scored ${score}/8`,
+        })
+    } else if (score > 4) {
+        Swal.fire({
+            title: "Well done!",
+            text: `You scored ${score}/8`,
+        })
+    } else {
+        Swal.fire({
+            title: "Unlucky!",
+            text: `You scored ${score}/8`,
+        })
+    }
+};
 
 function restartQuiz() {
 
@@ -95,7 +119,7 @@ function restartQuiz() {
     displayQuestion();
 }
 
-document.getElementById('restart-button').addEventListener('click', function() {
+document.getElementById('restart-button').addEventListener('click', function () {
     restartQuiz();
 });
 
