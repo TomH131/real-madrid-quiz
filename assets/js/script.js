@@ -10,42 +10,42 @@ function shuffleAnswers(array) {
 //List of questions, their answers and the correct one
 let questions = [
     {
-        question: "Who is the all-time top scorer for Real Madrid?",
+        question: "1. Who is the all-time top scorer for Real Madrid?",
         answers: shuffleAnswers(["Cristiano Ronaldo", "Raul", "Alfredo Di Stefano", "Karim Benzema"]),
         correctAnswer: "Cristiano Ronaldo"
     },
     {
-        question: "How many UEFA Champions League titles has Real Madrid won?",
+        question: "2. How many UEFA Champions League titles has Real Madrid won?",
         answers: shuffleAnswers(["10", "12", "14", "16"]),
         correctAnswer: "14"
     },
     {
-        question: "Who is the current manager of Real Madrid?",
+        question: "3. Who is the current manager of Real Madrid?",
         answers: shuffleAnswers(["Zinedine Zidane", "Jose Mourinho", "Carlo Ancelotti", "Rafa Benitez"]),
         correctAnswer: "Carlo Ancelotti"
     },
     {
-        question: "Who is the current captain of Real Madrid?",
+        question: "4. Who is the current captain of Real Madrid?",
         answers: shuffleAnswers(["Nacho", "Sergio Ramos", "Jude Bellingham", "Luka Modric"]),
         correctAnswer: "Nacho"
     },
     {
-        question: "What time did Sergio Ramos score the famous equalising goal in the 2014 Champions League final?",
+        question: "5. What time did Sergio Ramos score the famous equalising goal in the 2014 Champions League final?",
         answers: shuffleAnswers(["89:00", "91:54", "92:48", "90:02"]),
         correctAnswer: "92:48"
     },
     {
-        question: "Who is Real Madrid's most expensive transfer?",
+        question: "6. Who is Real Madrid's most expensive transfer?",
         answers: shuffleAnswers(["Gareth Bale", "Jude Bellingham", "Eden Hazard", "Toni Kroos"]),
         correctAnswer: "Eden Hazard"
     },
     {
-        question: "What year was Real Madrid founded?",
+        question: "7. What year was Real Madrid founded?",
         answers: shuffleAnswers(["1910", "1898", "1955", "1902"]),
         correctAnswer: "1902"
     },
     {
-        question: "Who is the current Real Madrid President?",
+        question: "8. Who is the current Real Madrid President?",
         answers: shuffleAnswers(["Ramon Calderon", "Florentino Perez", "David Beckham", "Joan Laporta"]),
         correctAnswer: "Florentino Perez"
     }
