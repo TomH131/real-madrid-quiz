@@ -35,6 +35,8 @@ img {
     margin: 15px auto;
     width: 80%;
     padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
 }
 
 button {
@@ -45,6 +47,8 @@ button {
     margin: 10px auto;
     width: 60%;
     padding: 5px;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 button:hover {
@@ -57,11 +61,12 @@ button:hover {
     background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 10px auto;
-    width: 40%;
+    width: 30%;
+    font-size: 12px;
 }
 
 #restart-button:hover {
-    background-color: rgb(65, 233, 65);
+    background-color: red;
 }
 
 /* Media query for tablets and larger (768px and up) */
