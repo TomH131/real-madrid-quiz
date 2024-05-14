@@ -64,11 +64,11 @@ function displayQuestion() {
     });
 }
 
-function checkAnswer() {
+function checkAnswer(selectedOption) {
 
     //Increasing the score by 1 every time a correct answer is selected
     let currentQuestion = questions[currentQuestionNumber];
-    if (selectedOption === currentQuestion.answer) {
+    if (selectedOption === currentQuestion.correctAnswer) {
         score++;
         document.getElementById('score').textContent = "Score: " + score + "/8";
     }
@@ -97,7 +97,7 @@ function restartQuiz() {
 
 document.getElementById('restart-button').addEventListener('click', function() {
     restartQuiz();
-}
+});
 
 //Running the function to begin the quiz
 displayQuestion();
