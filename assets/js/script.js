@@ -47,7 +47,7 @@ let score = 0;
 
 function displayQuestion() {
 
-    //Making the question show to the first question from the array
+    //Making the question show the first question from the array
     let currentQuestion = questions[currentQuestionNumber];
     document.getElementById('question').textContent = currentQuestion.question;
 
@@ -65,6 +65,24 @@ function displayQuestion() {
 
 function checkAnswer() {
 
+    //Increasing the score by 1 every time a correct answer is selected
+    let currentQuestion = questions[currentQuestionNumber];
+    if (selectedOption === currentQuestion.answer) {
+        score++;
+        document.getElementById('score').textContent = "Score: " + score + "/8";
+    }
+
+    //Moving the screen onto the next question or ending the quiz if it's the last question
+    currentQuestionNumber++;
+    is (currentQuestionNumber < questions.length) {
+        displayQuestion();
+    } else {
+        endQuiz();
+    }
+}
+
+function endQuiz() {
+    
 }
 
 //Running the function to begin the quiz
