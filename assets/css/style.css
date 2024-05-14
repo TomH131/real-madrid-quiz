@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Freeman&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 /*Global style */
 * {
     text-align: center;
     align-items: center;
     background-color: white;
     color: rgb(0 96 146);
+    font-family: "Ubuntu", sans-serif;
 }
 
 /*Header*/
@@ -21,6 +24,7 @@ img {
 .quiz {
     width: 80%;
     margin: 10px auto;
+    font-weight: bold;
 }
 
 #question {
@@ -43,6 +47,10 @@ button {
     padding: 5px;
 }
 
+button:hover {
+    background-color: rgb(65, 233, 65);
+}
+
 #restart-button {
     border-style: solid;
     border-color: rgb(175, 175, 175);
@@ -50,6 +58,10 @@ button {
     border-width: thin;
     margin: 10px auto;
     width: 40%;
+}
+
+#restart-button:hover {
+    background-color: rgb(65, 233, 65);
 }
 
 /* Media query for tablets and larger (768px and up) */
