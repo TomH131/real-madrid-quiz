@@ -122,16 +122,22 @@ function endQuiz() {
         Swal.fire({
             title: "Amazing!",
             text: `You scored ${score}/8`,
+            showConfirmButton: false,
+            timer: 1500
         })
     } else if (score > 4) {
         Swal.fire({
             title: "Well done!",
             text: `You scored ${score}/8`,
+            showConfirmButton: false,
+            timer: 1500
         })
     } else {
         Swal.fire({
             title: "Unlucky!",
             text: `You scored ${score}/8`,
+            showConfirmButton: false,
+            timer: 1500
         })
     }
 };
