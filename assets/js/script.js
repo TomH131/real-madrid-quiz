@@ -7,7 +7,7 @@ function shuffleAnswers(array) {
     return array;
 }
 
-//List of questions, their answers and the correct one
+//List of questions, their answers including the correct one and an image
 let questions = [
     {
         question: "1. Who is the all-time top scorer for Real Madrid?",
@@ -64,7 +64,7 @@ let score = 0;
 
 function displayQuestion() {
 
-    //Making the question show the first question from the array
+    //Making sure the first question from the array is shown
     let currentQuestion = questions[currentQuestionNumber];
     document.getElementById('question').textContent = currentQuestion.question;
 
@@ -117,6 +117,7 @@ function checkAnswer(selectedOption) {
     }
 }
 
+//Different responses for the end of the quiz depending on the score you get
 function endQuiz() {
     if (score === 8) {
         Swal.fire({
