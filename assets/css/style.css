@@ -3,7 +3,6 @@
 /*Global style */
 * {
     text-align: center;
-    align-items: center;
     background-color: white;
     color: #0F2145;
     font-family: "Ubuntu", sans-serif;
@@ -13,7 +12,6 @@
 /*Header*/
 h1 {
     font-size: 200%;
-    margin: 0;
     color: white;
     background-color: #0f2145;
     padding: 10px;
@@ -91,6 +89,6 @@ button:hover {
     }
 
     .quiz {
-        width: 60%;        
+        width: 50%;        
     }
 }
