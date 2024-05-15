@@ -34,7 +34,7 @@ img {
 
 #question {
     border-style: solid;
-    border-color: rgb(175, 175, 175);
+    border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 15px auto;
@@ -46,7 +46,7 @@ img {
 
 button {
     border-style: solid;
-    border-color: rgb(175, 175, 175);
+    border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 10px auto;
@@ -62,7 +62,7 @@ button:hover {
 
 #restart-button {
     border-style: solid;
-    border-color: rgb(175, 175, 175);
+    border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
     border-width: thin;
     margin: 10px auto;
@@ -72,7 +72,7 @@ button:hover {
 
 #restart-button:hover {
     color: white;
-    background-color: rgb(0 96 146);;
+    background-color: rgb(15, 33, 69)
 }
 
 #score {
