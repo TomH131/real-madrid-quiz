@@ -42,7 +42,8 @@ img {
     font-size: 18px;
 }
 
-button {
+div#answers button,
+#restart-button {
     border-style: solid;
     border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
@@ -54,7 +55,7 @@ button {
     font-size: 16px;
 }
 
-button:hover {
+div#answers button:hover {
     background-color: rgb(246 199 12);
 }
 

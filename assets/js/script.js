@@ -85,32 +85,28 @@ function checkAnswer(selectedOption) {
 
     //Increasing the score by 1 every time a correct answer is selected
     let currentQuestion = questions[currentQuestionNumber];
-    if (selectedOption === currentQuestion.correctAnswer) {
-        score++;
-        document.getElementById('score').textContent = "Score: " + score + "/8";
+    if (currentQuestion && selectedOption === currentQuestion.correctAnswer) {
+        document.getElementById('score').textContent = `Score: ${++score} /8`;
         Swal.fire({
             imageUrl: currentQuestion.image,
             title: "Correct!",
             imageWidth: 425,
             imageHeight: 250,
-            text: `You got the correct answer`,
-            showConfirmButton: false,
+            text: "You got the correct answer",
             timer: 1500
-        })
-    } else if (currentQuestionNumber === questions.length) {
+        });
+    } else if (currentQuestionNumber === questions.length || !currentQuestion) {
         endQuiz();
     } else {
         Swal.fire({
             title: "That's wrong unfortunately",
             text: `The answer is ${currentQuestion.correctAnswer}`,
-            showConfirmButton: false,
             timer: 1500
-        })
+        });
     }
 
     //Moving the screen onto the next question or ending the quiz if it's the last question
-    currentQuestionNumber++;
-    if (currentQuestionNumber < questions.length) {
+    if (++currentQuestionNumber < questions.length) {
         displayQuestion();
     } else {
         endQuiz();
@@ -125,23 +121,23 @@ function endQuiz() {
             text: `You scored ${score}/8`,
             showConfirmButton: false,
             timer: 1500
-        })
+        });
     } else if (score > 4) {
         Swal.fire({
             title: "Well done!",
             text: `You scored ${score}/8`,
             showConfirmButton: false,
             timer: 1500
-        })
+        });
     } else {
         Swal.fire({
             title: "Unlucky!",
             text: `You scored ${score}/8`,
             showConfirmButton: false,
             timer: 1500
-        })
+        });
     }
-};
+}
 
 function restartQuiz() {
 
