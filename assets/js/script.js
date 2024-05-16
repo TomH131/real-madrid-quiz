@@ -61,6 +61,7 @@ let questions = [
 
 let currentQuestionNumber = 0;
 let score = 0;
+let countdownInterval;
 
 function displayQuestion() {
 
@@ -115,6 +116,7 @@ function checkAnswer(selectedOption) {
 
 //Different responses for the end of the quiz depending on the score you get
 function endQuiz() {
+    clearInterval(countdownInterval);
     if (score === 8) {
         Swal.fire({
             title: "Amazing!",
@@ -137,15 +139,43 @@ function endQuiz() {
             timer: 1500
         });
     }
+    
 }
 
 function restartQuiz() {
+    // Clear the existing countdown interval if it exists
+    if (countdownInterval) {
+        clearInterval(countdownInterval);
+    }
 
     //Adding a restart quiz function so the user can try again after completing their first attempt
     currentQuestionNumber = 0;
     score = 0;
     document.getElementById("score").textContent = "Score: 0/8";
     displayQuestion();
+    startCountdown();
+}
+
+//Countdown function
+function startCountdown() {
+    //The user will have 30 seconds to answer the questions
+    var countdownValue = 30;
+
+    //Displaying the countdown on the webpage
+    function displayCountdown() {
+        document.getElementById("countdown").textContent = `Your countdown: ${countdownValue}`;
+    }
+
+    //Countdown reduces by 1 every second
+    countdownInterval = setInterval(function () {
+        countdownValue--;
+        displayCountdown();
+
+        if (countdownValue <= 0) {
+            clearInterval(countdownInterval);
+            endQuiz()
+        }
+    }, 1000);
 }
 
 document.getElementById('restart-button').addEventListener('click', function () {
@@ -154,3 +184,4 @@ document.getElementById('restart-button').addEventListener('click', function () 
 
 //Running the function to begin the quiz
 displayQuestion();
+startCountdown();
