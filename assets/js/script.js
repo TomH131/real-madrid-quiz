@@ -158,12 +158,12 @@ function restartQuiz() {
 
 //Countdown function
 function startCountdown() {
-    //The user will have 30 seconds to answer the questions
-    var countdownValue = 30;
+    //The user will have 120 seconds to answer the questions
+    var countdownValue = 120;
 
     //Displaying the countdown on the webpage
     function displayCountdown() {
-        document.getElementById("countdown").textContent = `Your countdown: ${countdownValue}`;
+        document.getElementById("countdown").textContent = `Your countdown: ${countdownValue} seconds`;
     }
 
     //Countdown reduces by 1 every second
