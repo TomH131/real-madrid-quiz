@@ -94,7 +94,7 @@ function checkAnswer(selectedOption) {
             imageWidth: 425,
             imageHeight: 250,
             text: "You got the correct answer",
-            timer: 1500
+            timer: 1500,
         });
     } else if (currentQuestionNumber === questions.length || !currentQuestion) {
         endQuiz();
@@ -120,26 +120,19 @@ function endQuiz() {
     if (score === 8) {
         Swal.fire({
             title: "Amazing!",
-            text: `You scored ${score}/8`,
-            showConfirmButton: false,
-            timer: 1500
+            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
         });
     } else if (score > 4) {
         Swal.fire({
             title: "Well done!",
-            text: `You scored ${score}/8`,
-            showConfirmButton: false,
-            timer: 1500
+            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
         });
     } else {
         Swal.fire({
             title: "Unlucky!",
-            text: `You scored ${score}/8`,
-            showConfirmButton: false,
-            timer: 1500
-        });
+            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
+        })
     }
-    
 }
 
 function restartQuiz() {
