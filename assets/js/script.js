@@ -101,7 +101,7 @@ function checkAnswer(selectedOption) {
     } else {
         Swal.fire({
             title: "That's wrong unfortunately",
-            text: `The answer is ${currentQuestion.correctAnswer}`,
+            text: `The answer is "${currentQuestion.correctAnswer}"`,
             timer: 1500
         });
     }
