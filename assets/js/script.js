@@ -94,7 +94,7 @@ function checkAnswer(selectedOption) {
             imageWidth: 425,
             imageHeight: 250,
             text: "You got the correct answer",
-            timer: 1500,
+            timer: 2000,
         });
     } else if (currentQuestionNumber === questions.length || !currentQuestion) {
         endQuiz();
@@ -102,7 +102,7 @@ function checkAnswer(selectedOption) {
         Swal.fire({
             title: "That's wrong unfortunately",
             text: `The answer is "${currentQuestion.correctAnswer}"`,
-            timer: 1500
+            timer: 2000
         });
     }
 
