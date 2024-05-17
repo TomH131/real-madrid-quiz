@@ -30,6 +30,10 @@ img {
     font-weight: bold;
 }
 
+#countdown {
+    font-weight: bold;
+}
+
 #question {
     border-style: solid;
     border-color: rgb(15, 33, 69, 0.2);

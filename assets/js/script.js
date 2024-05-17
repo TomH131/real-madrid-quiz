@@ -54,8 +54,7 @@ let questions = [
     {
         question: "8. Who is the current Real Madrid President?",
         answers: shuffleAnswers(["Ramon Calderon", "Florentino Perez", "David Beckham", "Joan Laporta"]),
-        correctAnswer: "Florentino Perez",
-        image: "assets/images/florentino-perez.jpg"
+        correctAnswer: "Florentino Perez"
     }
 ];
 
@@ -93,7 +92,7 @@ function checkAnswer(selectedOption) {
             title: "Correct!",
             imageWidth: 425,
             imageHeight: 250,
-            text: "You got the correct answer",
+            text: "You got the correct answer.",
             timer: 2000,
         });
     } else if (currentQuestionNumber === questions.length || !currentQuestion) {
@@ -101,7 +100,7 @@ function checkAnswer(selectedOption) {
     } else {
         Swal.fire({
             title: "That's wrong unfortunately",
-            text: `The answer is "${currentQuestion.correctAnswer}"`,
+            text: `The answer is "${currentQuestion.correctAnswer}."`,
             timer: 2000
         });
     }
@@ -131,7 +130,7 @@ function endQuiz() {
         Swal.fire({
             title: "Unlucky!",
             html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-        })
+        });
     }
 }
 
@@ -166,7 +165,7 @@ function startCountdown() {
 
         if (countdownValue <= 0) {
             clearInterval(countdownInterval);
-            endQuiz()
+            endQuiz();
         }
     }, 1000);
 }
