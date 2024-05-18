@@ -96,6 +96,7 @@ Running the website through the lighthouse proves there are no issues.
  - The pop up alerts were taken from [SweetAlert](https://sweetalert2.github.io/)
  - The font was taken from [Google font](https://fonts.google.com/)
  - The answer shuffle function was taken from [Lodash](https://lodash.com/docs/4.17.15#shuffle)
+ - Website icon taken from [Favicon](https://favicon.io/)
 
 ### Media
 
