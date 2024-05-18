@@ -92,7 +92,7 @@ function checkAnswer(selectedOption) {
             title: "Correct!",
             imageWidth: 425,
             imageHeight: 250,
-            text: "You got the correct answer.",
+            text: "You've got the correct answer.",
             timer: 2000,
         });
     } else if (currentQuestionNumber === questions.length || !currentQuestion) {
