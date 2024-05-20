@@ -63,24 +63,28 @@ let currentQuestionNumber = 0;
 let score = 0;
 let countdownInterval;
 
+let restart = document.getElementById('restart');
+let countdown = document.getElementById('countdown');
+let answersBox = document.getElementById('answers');
+let question = document.getElementById('question');
+
 // Function to start the quiz
 function startQuiz() {
 
-    document.getElementById('countdown').textContent = "";
-    document.getElementById('restart').innerHTML = "";
+    countdown.textContent = "";
+    restart.innerHTML = "";
     document.getElementById('score').textContent = "";
 
     //An opening explanation for the website and quiz
     let openMessage = "Hope you're ready to test your knowledge on the football club Real Madrid. You will have 120 seconds to answer 8 questions. Click 'Start quiz' below to begin!";
-    document.getElementById('question').textContent = openMessage;
+    question.textContent = openMessage;
 
-    let answersBox = document.getElementById('answers');
     answersBox.innerHTML = "";
 
     let startButton = document.createElement('button');
     startButton.textContent = "Start quiz";
     startButton.addEventListener('click', function () {
-        document.getElementById('countdown').textContent = "Your countdown: 120 seconds";
+        countdown.textContent = "Your countdown: 120 seconds";
         displayQuestion();
         startCountdown();
     });
@@ -92,10 +96,9 @@ function displayQuestion() {
 
     //Making sure the first question from the array is shown
     let currentQuestion = questions[currentQuestionNumber];
-    document.getElementById('question').textContent = currentQuestion.question;
+    question.textContent = currentQuestion.question;
 
     //Adding in the answers and running the checkAnswer function when they are clicked
-    let answersBox = document.getElementById('answers');
     answersBox.innerHTML = "";
     currentQuestion.answers.forEach(function (option) {
         let button = document.createElement('button');
@@ -107,7 +110,6 @@ function displayQuestion() {
     });
 
     // Adding the restart quiz button
-    let restart = document.getElementById('restart');
     restart.innerHTML = "";
     let restartButton = document.createElement('button');
     restartButton.textContent = 'Restart quiz';
@@ -162,23 +164,23 @@ function endQuiz() {
     if (currentQuestionNumber < questions.length) {
         endMessage = {
             title: "Time's up!",
-            text: `You didn't finish the quiz. Your score is ${score}/8.`,
+            text: `You didn't finish the quiz. Your score is ${score}/8. Click to share your score on <a href="https://www.facebook.com/" target="_blank" >Facebook</a>!`,
         };
     } else {
         if (score === 8) {
             endMessage = {
                 title: "Amazing!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/" target="_blank" >Facebook</a>!`,
             };
         } else if (score > 4) {
             endMessage = {
                 title: "Well done!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/" target="_blank" >Facebook</a>!`,
             };
         } else {
             endMessage = {
                 title: "Unlucky!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/" target="_blank" >Facebook</a>!`,
             };
         }
     }
@@ -197,7 +199,7 @@ function restartQuiz() {
     //Adding a restart quiz function so the user can try again after completing their first attempt
     currentQuestionNumber = 0;
     score = 0;
-    document.getElementById("score").textContent = "Score: 0/8";
+    score.textContent = "Score: 0/8";
     startQuiz();
 }
 
@@ -208,7 +210,7 @@ function startCountdown() {
 
     //Displaying the countdown on the webpage
     function displayCountdown() {
-        document.getElementById("countdown").textContent = `Your countdown: ${countdownValue} seconds`;
+        countdown.textContent = `Your countdown: ${countdownValue} seconds`;
     }
 
     //Countdown reduces by 1 every second

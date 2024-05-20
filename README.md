@@ -11,7 +11,7 @@ This quiz is meant for fun, for people of all ages and is likely to attract anyb
 
 At the top of the page is the title and also Real Madrid's club crest. The title should make it clear to the user what kind of webpage they are on. The football club badge is also immediately recognisable to a lot of people.
 
-The colour used for the banner at the top of page has been taken directly from the official Real Madrid website to allow for immediate brand recognition. These colours are then used throughtout the website.
+The colour used for the banner at the top of page has been taken directly from the official Real Madrid website to allow for immediate brand recognition. These colours are then used throughout the website.
 
 ![Header](assets/images/real-madrid-header.png)
 
@@ -19,7 +19,7 @@ The colour used for the banner at the top of page has been taken directly from t
 
 Below the club crest there is an opening statement gives the user an idea of what to expect from the upcoming quiz.
 
-There is a start quiz button below which the user can click to begin the quiz. Once the button has been clicked the first quetion and answers will appear alongisde the score and the countdown timer which will begin counting down.
+There is a start quiz button below which the user can click to begin the quiz. Once the button has been clicked the first question and answers will appear alongisde the score and the countdown timer which will begin counting down.
 
 ![Opening statement](assets/images/opening-statement.png)
 
