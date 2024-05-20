@@ -9,7 +9,6 @@ This quiz is meant for fun, for people of all ages and is likely to attract anyb
 
 ### Heading and image
 
-
 At the top of the page is the title of the page and also Real Madrid's club crest. The title should make it clear to the user what kind of webpage they are on. The football club badge is also immediately recognisable to a lot of people.
 
 The colour used for the banner at the top of page has been taken directly from the official Real Madrid website to allow for immediate brand recognition.

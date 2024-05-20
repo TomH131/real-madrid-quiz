@@ -54,13 +54,31 @@ let questions = [
     {
         question: "8. Who is the current Real Madrid President?",
         answers: shuffleAnswers(["Ramon Calderon", "Florentino Perez", "David Beckham", "Joan Laporta"]),
-        correctAnswer: "Florentino Perez"
+        correctAnswer: "Florentino Perez",
+        image: "assets/images/florentino-perez.jpg"
     }
 ];
 
 let currentQuestionNumber = 0;
 let score = 0;
 let countdownInterval;
+
+function startQuiz() {
+    let openMessage = "Hope you're ready to test your knowledge about the football club Real Madrid. You will have 120 seconds to answer 8 questions. Click 'Start quiz' below to begin!";
+    document.getElementById('question').textContent = openMessage;
+
+    let answersBox = document.getElementById('answers');
+    answersBox.innerHTML = ""; // Clear any existing content
+
+    let startButton = document.createElement('button');
+    startButton.textContent = "Start quiz";
+    startButton.addEventListener('click', function () {
+        displayQuestion();
+        startCountdown();
+    });
+    
+    answersBox.appendChild(startButton);  
+}
 
 function displayQuestion() {
 
@@ -82,8 +100,6 @@ function displayQuestion() {
 }
 
 function checkAnswer(selectedOption) {
-
-    //Increasing the score by 1 every time a correct answer is selected
     let currentQuestion = questions[currentQuestionNumber];
     if (currentQuestion && selectedOption === currentQuestion.correctAnswer) {
         document.getElementById('score').textContent = `Score: ${++score} /8`;
@@ -94,6 +110,12 @@ function checkAnswer(selectedOption) {
             imageHeight: 250,
             text: "You've got the correct answer.",
             timer: 2000,
+        }).then(() => {
+            if (++currentQuestionNumber < questions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
         });
     } else if (currentQuestionNumber === questions.length || !currentQuestion) {
         endQuiz();
@@ -102,35 +124,41 @@ function checkAnswer(selectedOption) {
             title: "That's wrong unfortunately",
             text: `The answer is "${currentQuestion.correctAnswer}."`,
             timer: 2000
+        }).then(() => {
+            if (++currentQuestionNumber < questions.length) {
+                displayQuestion();
+            } else {
+                endQuiz();
+            }
         });
-    }
-
-    //Moving the screen onto the next question or ending the quiz if it's the last question
-    if (++currentQuestionNumber < questions.length) {
-        displayQuestion();
-    } else {
-        endQuiz();
     }
 }
 
 //Different responses for the end of the quiz depending on the score you get
 function endQuiz() {
     clearInterval(countdownInterval);
-    if (score === 8) {
+    if (currentQuestionNumber < questions.length) {
         Swal.fire({
-            title: "Amazing!",
-            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-        });
-    } else if (score > 4) {
-        Swal.fire({
-            title: "Well done!",
-            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
+            title: "Time's up!",
+            text: `You didn't finish the quiz. Your score is ${score}/8.`
         });
     } else {
-        Swal.fire({
-            title: "Unlucky!",
-            html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-        });
+        if (score === 8) {
+            Swal.fire({
+                title: "Amazing!",
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
+            });
+        } else if (score > 4) {
+            Swal.fire({
+                title: "Well done!",
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
+            });
+        } else {
+            Swal.fire({
+                title: "Unlucky!",
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
+            });
+        }
     }
 }
 
@@ -175,5 +203,4 @@ document.getElementById('restart-button').addEventListener('click', function () 
 });
 
 //Running the function to begin the quiz
-displayQuestion();
-startCountdown();
+startQuiz()
