@@ -131,7 +131,7 @@ function checkAnswer(selectedOption) {
             imageHeight: 250,
             text: "You've got the correct answer.",
             timer: 2000,
-        }).then(() => {
+        }).then(function() {
             if (++currentQuestionNumber < questions.length) {
                 displayQuestion();
             } else {
@@ -198,7 +198,7 @@ function restartQuiz() {
     currentQuestionNumber = 0;
     score = 0;
     document.getElementById("score").textContent = "Score: 0/8";
-    startQuiz()
+    startQuiz();
 }
 
 //Countdown function
@@ -224,4 +224,4 @@ function startCountdown() {
 }
 
 //Running the first function
-startQuiz()
+startQuiz();
