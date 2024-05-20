@@ -13,7 +13,7 @@
 h1 {
     font-size: 200%;
     color: white;
-    background-color: #0f2145;
+    background-color: #0F2145;
     padding: 10px;
 }
 
@@ -36,7 +36,6 @@ img {
 
 #question {
     border-style: solid;
-    border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(15, 33, 69);
     border-width: thin;
     margin: 15px auto;
@@ -65,18 +64,13 @@ div#answers button:hover {
 }
 
 div#restart button {
-    border-style: solid;
-    border-color: rgb(15, 33, 69, 0.2);
-    background-color: rgb(221, 221, 221, 0.4);
-    border-width: thin;
-    margin: 10px auto;
     width: 30%;
     font-size: 12px;
 }
 
 div#restart button:hover {
     color: white;
-    background-color: rgb(15, 33, 69)
+    background-color: rgb(15, 33, 69);
 }
 
 #score {
