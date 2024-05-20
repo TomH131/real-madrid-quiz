@@ -69,7 +69,7 @@ function startQuiz() {
     document.getElementById('countdown').textContent = "";
 
     //An opening explanation for the website and quiz
-    let openMessage = "Hope you're ready to test your knowledge about the football club Real Madrid. You will have 120 seconds to answer 8 questions. Click 'Start quiz' below to begin!";
+    let openMessage = "Hope you're ready to test your knowledge on the football club Real Madrid. You will have 120 seconds to answer 8 questions. Click 'Start quiz' below to begin!";
     document.getElementById('question').textContent = openMessage;
 
     let answersBox = document.getElementById('answers');
@@ -190,7 +190,7 @@ function restartQuiz() {
 //Countdown function
 function startCountdown() {
     //The user will have 120 seconds to answer the questions
-    var countdownValue = 2;
+    var countdownValue = 120;
 
     //Displaying the countdown on the webpage
     function displayCountdown() {
