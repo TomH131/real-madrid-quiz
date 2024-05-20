@@ -19,7 +19,7 @@ The colour used for the banner at the top of page has been taken directly from t
 
 Below the club crest there is an opening statement gives the user an idea of what to expect from the upcoming quiz.
 
-There is a start quiz button below which the user can click to begin the quiz. Once the button has been clicked the first question and answers will appear alongisde the score and the countdown timer which will begin counting down.
+There is a start quiz button below which the user can click to begin the quiz. Once the button has been clicked the first question and answers will appear alongside the score and the countdown timer which will begin counting down.
 
 ![Opening statement](assets/images/opening-statement.png)
 
@@ -69,7 +69,7 @@ After the user answers the last question or once the countdown reaches zero, a p
 
 ## Testing
 
-### Html
+### HTML
 
 No errors were found when the HTML code was ran through the [W3C validator](https://validator.w3.org/#validate_by_input)
 
@@ -90,7 +90,7 @@ The site was deployed to GitHub pages. The steps to deploy are as follows:
 
 The live link is as follows - https://tomh131.github.io/real-madrid-quiz/
 
-## Accessibilty
+## Accessibility
 
 Running the website through the lighthouse proves there are no issues.
 
