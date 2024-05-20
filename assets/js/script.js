@@ -78,6 +78,7 @@ function startQuiz() {
     let startButton = document.createElement('button');
     startButton.textContent = "Start quiz";
     startButton.addEventListener('click', function () {
+        document.getElementById('countdown').textContent = "Your countdown: 120 seconds";
         displayQuestion();
         startCountdown();
     });
@@ -140,32 +141,37 @@ function checkAnswer(selectedOption) {
     }
 }
 
-//Different responses for the end of the quiz depending on the score you get
+// Different responses for the end of the quiz depending on the score you get
 function endQuiz() {
     clearInterval(countdownInterval);
+    let endMessage;
     if (currentQuestionNumber < questions.length) {
-        Swal.fire({
+        endMessage = {
             title: "Time's up!",
-            text: `You didn't finish the quiz. Your score is ${score}/8.`
-        });
+            text: `You didn't finish the quiz. Your score is ${score}/8.`,
+        };
     } else {
         if (score === 8) {
-            Swal.fire({
+            endMessage = {
                 title: "Amazing!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-            });
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+            };
         } else if (score > 4) {
-            Swal.fire({
+            endMessage = {
                 title: "Well done!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-            });
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+            };
         } else {
-            Swal.fire({
+            endMessage = {
                 title: "Unlucky!",
-                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`
-            });
+                html: `You scored ${score}/8. Click to share your score on <a href="https://www.facebook.com/">Facebook</a>!`,
+            };
         }
     }
+
+    Swal.fire(endMessage).then(() => {
+        restartQuiz();
+    });
 }
 
 function restartQuiz() {
@@ -184,7 +190,7 @@ function restartQuiz() {
 //Countdown function
 function startCountdown() {
     //The user will have 120 seconds to answer the questions
-    var countdownValue = 120;
+    var countdownValue = 2;
 
     //Displaying the countdown on the webpage
     function displayCountdown() {
