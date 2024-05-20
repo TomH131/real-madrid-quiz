@@ -68,6 +68,7 @@ function startQuiz() {
 
     document.getElementById('countdown').textContent = "";
     document.getElementById('restart').innerHTML = "";
+    document.getElementById('score').textContent = "";
 
     //An opening explanation for the website and quiz
     let openMessage = "Hope you're ready to test your knowledge on the football club Real Madrid. You will have 120 seconds to answer 8 questions. Click 'Start quiz' below to begin!";
@@ -105,6 +106,7 @@ function displayQuestion() {
         answersBox.appendChild(button);
     });
 
+    // Adding the restart quiz button
     let restart = document.getElementById('restart');
     restart.innerHTML = "";
     let restartButton = document.createElement('button');
@@ -113,6 +115,8 @@ function displayQuestion() {
         restartQuiz();
     });
     restart.appendChild(restartButton);
+
+    document.getElementById('score').textContent = `Score: ${score}/8`;
 }
 
 // Checking the answers selected and providing a response
