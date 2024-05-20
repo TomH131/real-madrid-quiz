@@ -48,7 +48,7 @@ img {
 }
 
 div#answers button,
-#restart-button {
+div#restart button {
     border-style: solid;
     border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
@@ -64,7 +64,7 @@ div#answers button:hover {
     background-color: rgb(246 199 12);
 }
 
-#restart-button {
+div#restart button {
     border-style: solid;
     border-color: rgb(15, 33, 69, 0.2);
     background-color: rgb(221, 221, 221, 0.4);
@@ -74,7 +74,7 @@ div#answers button:hover {
     font-size: 12px;
 }
 
-#restart-button:hover {
+div#restart button:hover {
     color: white;
     background-color: rgb(15, 33, 69)
 }
